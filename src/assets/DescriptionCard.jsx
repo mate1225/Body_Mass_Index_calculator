@@ -8,7 +8,7 @@ function DescriptionCard(props) {
     >
       <img src={image} alt="image" className=" h-[64px] w-[64px]" />
       <div>
-        <h3 className="pt-8 text-[1.5rem] font-semibold tracking-[-0.075rem] text-Gunmetal">
+        <h3 className="pt-8 text-[1.5rem] font-semibold tracking-[-0.075rem] text-Gunmetal md:pt-0">
           {title}
         </h3>
         <p className="pt-6 text-Dark_Electric_Blue">{text}</p>
