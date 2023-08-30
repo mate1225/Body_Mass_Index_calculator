@@ -24,11 +24,12 @@ function App() {
     <div>
       <Header />
       <Card />
-      <div className="md:flex md:items-center md:justify-center md:gap-[4.69rem]">
+      <div className="md:flex ">
         <img
           src={ManEating}
           alt="image-man-eating"
-          className="mt-[4.5rem] md:mt-[6rem] md:max-h-[25.69313rem] md:max-w-[22.56rem]"
+          className="mt-[4.5rem] md:ml-[-4rem] md:mr-[4.69rem]
+           md:mt-[6rem] md:h-[25.69313rem] md:w-[22.55981rem]"
         />
         <Description
           title="What your BMI result means"
@@ -39,7 +40,7 @@ function App() {
       ample fruits and vegetables. Additionally, strive for regular
       physical activity, ideally about 30 minutes daily for five days a
       week."
-          customStyle="mt-[3rem] mb-[4.48rem] md:mt-[8.19rem] md:mr-[2.69rem]"
+          customStyle="mt-[3rem] mb-[4.48rem]  md:mr-[2.69rem] md:mt-[8.19rem]"
         />
       </div>
       <section
@@ -76,7 +77,10 @@ function App() {
         the measurement may not be beneficial to use."
         customStyle="mt-[4.5rem] text-center mb-[3.5rem]"
       />
-      <section className="mb-[6rem] flex flex-col gap-4">
+      <section
+        className="mb-[6rem] flex flex-col 
+      gap-4 md:flex-row md:flex-wrap md:justify-center md:gap-8 "
+      >
         <LimitationsCard
           image={IconGender}
           title="Gender"

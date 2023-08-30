@@ -2,7 +2,10 @@ import React from "react";
 function LimitationCard(props) {
   let { image, title, text } = props;
   return (
-    <div className="ml-[1.2rem] mr-[1.81rem] rounded-2xl bg-Pure_White p-6 shadow-cardShadow">
+    <div
+      className="ml-[1.2rem] mr-[1.81rem] rounded-2xl bg-Pure_White
+     p-6 shadow-cardShadow md:m-0 md:max-w-[20.96rem]"
+    >
       <div className="flex items-center gap-4">
         <img src={image} alt="image" className=" h-[32px] w-[32px]" />
         <h3
