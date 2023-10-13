@@ -1,0 +1,2 @@
+- a "Healthy eating"-től kezdődően nem jó a háttér "opacity"-je
+- az elrendezés mérteti átt kell nézni

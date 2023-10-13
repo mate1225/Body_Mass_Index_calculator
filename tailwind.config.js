@@ -14,7 +14,7 @@ export default {
       },
       backgroundImage: {
         gradient1:
-          "linear-gradient(315deg, #D6E6FE 0%, rgba(214, 252, 254, 0.00) 100%)",
+          "linear-gradient(290deg, #D6E6FE 0%, rgba(214, 252, 254, 0.00) 100%)",
         gradient2: "linear-gradient(90deg, #345FF6 0%, #587DFF 100%)",
       },
       boxShadow: {

@@ -4,7 +4,7 @@ function DescriptionCard(props) {
   return (
     <div
       className="pt-[2.5rem] md:ml-[2.44rem] md:flex md:items-center 
-    md:justify-center md:gap-[2.5rem]"
+    md:justify-center md:gap-[2.5rem] xl:flex-col xl:items-start"
     >
       <img src={image} alt="image" className=" h-[64px] w-[64px]" />
       <div>

@@ -35,7 +35,6 @@ function Imperial() {
           </div>
         </div>
       </div>
-      <ResultCard resultWeight="22.0" idealWeight=" 9st 6lbs - 12st 10lbs." />
     </>
   );
 }
