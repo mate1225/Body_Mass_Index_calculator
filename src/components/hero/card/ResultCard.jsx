@@ -1,6 +1,4 @@
-import React, { useState } from "react";
-function ResultCard(props) {
-  let { resultWeight, idealWeight } = props;
+function ResultCard({ resultWeight, idealWeight }) {
   return (
     <div className=" mt-6 items-baseline rounded-2xl bg-gradient2 p-8 text-Pure_White md:flex md:gap-[6.25rem] md:rounded-r-[10rem] lg:max-h-[10.375rem]">
       <div>

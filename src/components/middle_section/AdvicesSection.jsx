@@ -1,8 +1,8 @@
-import DescriptionCard from "./DescriptionCard";
+import DescriptionCard from "../bottom_section/DescriptionCard";
 //images
-import IconEating from "./images/icon-eating.svg";
-import IconExercise from "./images/icon-exercise.svg";
-import IconSleep from "./images/icon-sleep.svg";
+import IconEating from "../../images/icon-eating.svg";
+import IconExercise from "../../images/icon-exercise.svg";
+import IconSleep from "../../images/icon-sleep.svg";
 
 function AdvicesSection() {
   return (

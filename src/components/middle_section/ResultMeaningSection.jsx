@@ -1,5 +1,5 @@
-import ManEating from "./images/image-man-eating.webp";
-import Description from "./Description";
+import ManEating from "../../images/image-man-eating.webp";
+import Description from "../bottom_section/Description";
 function ResultMeaningSection() {
   return (
     <>

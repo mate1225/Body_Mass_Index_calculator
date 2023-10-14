@@ -1,6 +1,3 @@
-import React, { useState } from "react";
-import ResultCard from "./ResultCard";
-import Welcome from "./Welcome";
 import InputComponent from "./InputComponent";
 function Metric() {
   const RenderVAlue = false;

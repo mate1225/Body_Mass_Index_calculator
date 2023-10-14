@@ -1,7 +1,4 @@
-import React from "react";
-
-function Description(props) {
-  let { title, text, customStyle } = props;
+function Description({ title, text, customStyle }) {
   return (
     <section className={customStyle}>
       <div className="mx-5 xl:ml-[5rem] xl:mr-[8.25rem] xl:text-left">

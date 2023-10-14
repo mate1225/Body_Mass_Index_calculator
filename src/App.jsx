@@ -1,22 +1,17 @@
 import React, { useState } from "react";
 import "./App.css";
 //jsx components
-import Description from "./components/Description";
-import Footer from "./components/Footer";
-import LimitationsSection from "./components/LimitationsSection";
-import ResultMeaningSection from "./components/ResultMeaningSection";
-import Hero from "./components/Hero";
-import AdvicesSection from "./components/AdvicesSection";
+import Hero from "./components/hero/Hero";
+import ResultMeaningSection from "./components/middle_section/ResultMeaningSection";
+import AdvicesSection from "./components/middle_section/AdvicesSection";
+import Description from "./components/bottom_section/Description";
+import LimitationsSection from "./components/bottom_section/limitations/LimitationsSection";
+import Footer from "./components/bottom_section/Footer";
 
 function App() {
   return (
     <div>
       <Hero />
-      {/*  decorative line */}
-      {/*  <div className="absolute right-0 mr-[10.4rem] mt-[0.81rem] hidden lg:flex lg:justify-end">
-        <img src={CurvedLineLeft} alt="Curved Line Left" />
-      </div> */}
-
       <ResultMeaningSection />
       <AdvicesSection />
       <div className=" flex flex-col xl:flex-row">

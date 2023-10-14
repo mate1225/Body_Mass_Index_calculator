@@ -2,13 +2,13 @@
 import LimitationsCard from "./LimitationCard";
 import CardWrapper from "./CardWrapper";
 //images
-import IconGender from "./images/icon-gender.svg";
-import IconAge from "./images/icon-age.svg";
-import IconMuscle from "./images/icon-muscle.svg";
-import IconPregnancy from "./images/icon-pregnancy.svg";
-import IconRace from "./images/icon-race.svg";
-import CurvedLineLeft from "./images/pattern-curved-line-left.svg";
-import CurvedLineRight from "./images/pattern-curved-line-right.svg";
+import IconGender from "../../../images/icon-gender.svg";
+import IconAge from "../../../images/icon-age.svg";
+import IconMuscle from "../../../images/icon-muscle.svg";
+import IconPregnancy from "../../../images/icon-pregnancy.svg";
+import IconRace from "../../../images/icon-race.svg";
+import CurvedLineLeft from "../../../images/pattern-curved-line-left.svg";
+import CurvedLineRight from "../../../images/pattern-curved-line-right.svg";
 function LimitationsSection() {
   return (
     <>
@@ -51,6 +51,7 @@ function LimitationsSection() {
         />
       </section>
       {/* határ */}
+
       <CardWrapper>
         <LimitationsCard
           image={IconGender}

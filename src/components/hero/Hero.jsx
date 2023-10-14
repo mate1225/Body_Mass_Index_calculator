@@ -1,5 +1,5 @@
 import Header from "./Header";
-import Card from "./Card";
+import Card from "./card/Card";
 function Hero() {
   return (
     <div className="lg:inline-block ">

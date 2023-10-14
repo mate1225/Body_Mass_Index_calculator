@@ -1,6 +1,4 @@
-import React from "react";
-function LimitationCard(props) {
-  let { image, title, text, style } = props;
+function LimitationCard({ image, title, text, style }) {
   return (
     <div
       className={`ml-[1.2rem] mr-[1.81rem] rounded-2xl bg-Pure_White

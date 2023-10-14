@@ -1,6 +1,4 @@
-import React from "react";
-function DescriptionCard(props) {
-  let { image, title, text } = props;
+function DescriptionCard({ image, title, text }) {
   return (
     <div
       className="pt-[2.5rem] md:ml-[2.44rem] md:flex md:items-center 

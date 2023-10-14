@@ -1,5 +1,3 @@
-import React, { useState } from "react";
-import ResultCard from "./ResultCard";
 function Imperial() {
   return (
     <>

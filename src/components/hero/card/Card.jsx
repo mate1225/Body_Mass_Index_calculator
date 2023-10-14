@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import Metric from "./Metric";
 import Imperial from "./Imperial";
 import RadioButton from "./RadioButton";

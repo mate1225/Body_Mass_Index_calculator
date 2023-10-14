@@ -1,4 +1,3 @@
-import React from "react";
 function Welcome() {
   return (
     <div className=" mt-8  rounded-2xl bg-gradient2 p-8 text-Pure_White lg:rounded-l-2xl lg:rounded-r-[10rem] ">
