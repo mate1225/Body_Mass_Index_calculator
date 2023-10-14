@@ -8,7 +8,7 @@ function AdvicesSection() {
   return (
     <section
       className="bg-gradient1 pb-[3.5rem] pl-[1.2rem]
-      pr-[1.81rem] pt-4  md:mt-[6rem] xl:flex"
+      pr-[1.81rem] pt-4  md:mt-[6rem] xl:flex xl:rounded-[2.188rem]"
     >
       <DescriptionCard
         image={IconEating}

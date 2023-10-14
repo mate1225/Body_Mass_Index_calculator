@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <>
-      <footer className="flex flex-wrap items-center  justify-center gap-5 bg-bgColor p-4 xl:text-lg">
+      <footer className="flex flex-wrap items-center  justify-center gap-5 bg-bgColor p-4 xl:rounded-t-[2.188rem] xl:text-lg">
         <div className="flex ">
           <p className="text-Dark_Electric_Blue">Challenge by:</p>
           <a
