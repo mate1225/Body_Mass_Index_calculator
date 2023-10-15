@@ -2,7 +2,7 @@ import Header from "./Header";
 import Card from "./card/Card";
 function Hero() {
   return (
-    <div className="lg:inline-block ">
+    <div className="xl:inline-block ">
       <Header />
       <Card />
     </div>

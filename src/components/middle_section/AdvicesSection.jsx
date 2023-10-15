@@ -7,8 +7,8 @@ import IconSleep from "../../images/icon-sleep.svg";
 function AdvicesSection() {
   return (
     <section
-      className="bg-gradient1 pb-[3.5rem] pl-[1.2rem]
-      pr-[1.81rem] pt-4  md:mt-[6rem] xl:flex xl:rounded-[2.188rem]"
+      className="items-start bg-gradient1 pb-[3.5rem]
+      pl-[1.2rem] pr-[1.81rem]  pt-4 md:mt-[6rem] md:flex md:flex-col xl:flex-row xl:rounded-[2.188rem]"
     >
       <DescriptionCard
         image={IconEating}

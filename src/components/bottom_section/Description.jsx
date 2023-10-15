@@ -1,8 +1,8 @@
-function Description({ title, text, customStyle }) {
+function Description({ title, text, mainStyle, divStyle }) {
   return (
-    <section className={customStyle}>
-      <div className="mx-5 xl:ml-[5rem] xl:mr-[8.25rem] xl:text-left">
-        <h2 className=" text-[2rem] font-semibold tracking-[-0.1rem] text-Gunmetal ">
+    <section className={mainStyle}>
+      <div className={`mx-5  ${divStyle}`}>
+        <h2 className=" text-[2rem] font-semibold tracking-[-0.1rem] text-Gunmetal xl:text-[3rem] xl:leading-[3.3rem] ">
           {title}
         </h2>
         <p className=" mt-8 text-Dark_Electric_Blue ">{text}</p>

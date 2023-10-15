@@ -15,7 +15,7 @@ function Footer() {
         <div className="flex">
           <p className=" text-Dark_Electric_Blue">Coded by:</p>
           <a
-            href="https://github.com/mate1225/mate1225.github.io"
+            href="https://github.com/mate1225"
             target="_blank"
             className=" cursor-pointer  text-Blue"
           >
