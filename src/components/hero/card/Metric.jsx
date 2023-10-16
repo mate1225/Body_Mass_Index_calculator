@@ -1,6 +1,5 @@
 import InputComponent from "./InputComponent";
-function Metric() {
-  const RenderVAlue = false;
+function Metric({}) {
   return (
     <>
       <div className="mt-6 grid grid-cols-1 grid-rows-2  gap-3 md:grid-cols-2 md:grid-rows-1">
@@ -10,7 +9,7 @@ function Metric() {
             className="rounded-xl border-2 border-solid border-Borders px-[1.5rem] py-[1.25rem] 
             text-[1.5rem] font-semibold text-Gunmetal outline-Blue "
           /> */}
-        <InputComponent title="Weight" /* unit="cm" */ />
+        <InputComponent title="Weight" /*  unit="kg" */ />
         <InputComponent title="Height" /* unit="cm" */ />
 
         {/* <div className="flex flex-col gap-2">
