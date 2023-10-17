@@ -8,19 +8,20 @@ import Welcome from "./Welcome";
 function Card() {
   const [state, setState] = useState({
     radioButton: "Metric",
-    /* kg: 82,
+    kg: 82,
     cm: 175,
     st: 12,
     lbs: 4.8,
     ft: 5,
-    in: 8.9, */
-    kg: 0,
+    in: 8.9,
+    /* kg: 0,
     cm: 0,
     st: 0,
     lbs: 0,
     ft: 0,
-    in: 0,
+    in: 0, */
   });
+  //display state
   let active = false;
   if (state.radioButton === "Metric" && state.cm > 0 && state.kg > 0) {
     active = true;
@@ -45,22 +46,32 @@ function Card() {
       };
     });
   }
+  //calculations
   let bmi = 0;
+  let metricHeight = Math.pow(state.cm / 100, 2);
   if (state.radioButton === "Metric") {
-    let weight = Math.sqrt(state.kg);
-    bmi = state.cm / weight;
+    bmi = state.kg / metricHeight;
     bmi = bmi.toFixed(2);
   } else if (state.radioButton === "Imperial") {
     //nincs kész
-    const ft = state.ft * 0.0328;
-    const inc = state.in * 0.0833333333 * 0.0328;
-    const height = ft + inc;
-
-    const Weight = Math.sqrt(state.kg);
-    bmi = height / Weight;
-    bmi = bmi.toFixed(2);
   } else {
   }
+
+  //current Health Status
+  let currentHealthStatus = "";
+  if (bmi <= 18.5) {
+    currentHealthStatus = "Underweight";
+  } else if (bmi <= 24.9) {
+    currentHealthStatus = "healthy weight";
+  } else if (bmi <= 29.9) {
+    currentHealthStatus = "Overweight";
+  } else if (bmi >= 30) {
+    currentHealthStatus = "Obesity";
+  }
+  //ideal weight
+  let minimumIdealWeight = (18.5 * metricHeight).toFixed(1);
+  let maximumIdealWeight = (24.9 * metricHeight).toFixed(1);
+  let idealWeightValue = `${minimumIdealWeight}kg - ${maximumIdealWeight}kg`;
   return (
     <section
       className="z-2 lx:max-w-[31.3rem] relative ml-6 mr-6 mt-[-180px] rounded-2xl
@@ -89,7 +100,12 @@ function Card() {
       </div>
       {state.radioButton === "Metric" ? <Metric /> : <Imperial />}
       {active ? (
-        <ResultCard resultWeight={bmi} idealWeight=" 9st 6lbs - 12st 10lbs." />
+        <ResultCard
+          resultWeight={bmi}
+          idealWeight={idealWeightValue}
+          currentHealthStatus={currentHealthStatus}
+          unit={state.radioButton === "Metric" ? " kg" : " lbs"}
+        />
       ) : (
         <Welcome />
       )}
