@@ -1,4 +1,3 @@
-/* eslint-disable prettier/prettier */
 function ResultCard({ resultWeight, idealWeight, currentHealthStatus, unit }) {
   return (
     <div className=" mt-6 items-baseline rounded-2xl bg-gradient2 p-8 text-Pure_White md:flex md:gap-[6.25rem] md:rounded-r-[10rem] lg:max-h-[10.375rem]">
