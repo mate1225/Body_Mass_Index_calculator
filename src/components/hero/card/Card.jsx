@@ -92,7 +92,15 @@ function Card() {
   } else if (state.radioButton === "Imperial") {
     //ide kerül majd az imperial számítások
   }
-
+  function handelChange(e) {
+    const { name, value } = e.target;
+    setState((prev) => {
+      return {
+        ...prev,
+        [name]: value,
+      };
+    });
+  }
   return (
     <section
       className="z-2 relative ml-6 mr-6 mt-[-180px] rounded-2xl
@@ -119,7 +127,15 @@ function Card() {
           btnChecked={state.radioButton === "Imperial"}
         />
       </div>
-      {state.radioButton === "Metric" ? <Metric /> : <Imperial />}
+      {state.radioButton === "Metric" ? (
+        <Metric
+          kgValue={state.kg}
+          cmValue={state.cm}
+          handleChange={handelChange}
+        />
+      ) : (
+        <Imperial />
+      )}
       {active ? (
         <ResultCard
           resultWeight={bmi}
