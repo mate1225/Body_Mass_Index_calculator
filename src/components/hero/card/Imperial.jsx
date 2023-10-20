@@ -1,3 +1,4 @@
+import InputComponent from "./InputComponent";
 function Imperial() {
   return (
     <>
@@ -5,31 +6,15 @@ function Imperial() {
         <div className="flex flex-col gap-2">
           <p className="text-[0.875rem] text-Labels">Height</p>
           <div className="grid grid-cols-2 gap-4">
-            <input
-              type="text"
-              className="rounded-xl border-2 border-solid border-Borders 
-              px-[1.5rem] py-[1.25rem] text-[1.5rem] font-semibold text-Gunmetal "
-            />
-            <input
-              type="text"
-              className="rounded-xl border-2 border-solid border-Borders 
-              px-[1.5rem] py-[1.25rem] text-[1.5rem] font-semibold text-Gunmetal "
-            />
+            <InputComponent unit="ft" />
+            <InputComponent unit="in" />
           </div>
         </div>
         <div className="flex flex-col gap-2">
           <p className="text-[0.875rem] text-Labels">Weight</p>
           <div className="grid grid-cols-2 gap-4">
-            <input
-              type="text"
-              className="rounded-xl border-2 border-solid border-Borders 
-              px-[1.5rem] py-[1.25rem] text-[1.5rem] font-semibold text-Gunmetal "
-            />
-            <input
-              type="text"
-              className="rounded-xl border-2 border-solid border-Borders 
-              px-[1.5rem] py-[1.25rem] text-[1.5rem] font-semibold text-Gunmetal "
-            />
+            <InputComponent unit="st" />
+            <InputComponent unit="lbs" />
           </div>
         </div>
       </div>
