@@ -8,18 +8,12 @@ import Welcome from "./Welcome";
 function Card() {
   const [state, setState] = useState({
     radioButton: "Metric",
-    /*   kg: 82,
-    cm: 175,
-    st: 12,
-    lbs: 4.8,
-    ft: 5,
-    in: 8.9, */
-    kg: 0,
-    cm: 0,
-    st: 0,
-    lbs: 0,
-    ft: 0,
-    in: 0,
+    kg: "",
+    cm: "",
+    st: "",
+    lbs: "",
+    ft: "",
+    in: "",
   });
   const inputObject = useContext(" bg-red-500");
   //display state
@@ -49,23 +43,23 @@ function Card() {
   }
   //calculations
   let bmi = 0;
-  let metricHeight = Math.pow(state.cm / 100, 2);
-  let ImperialHeight = Math.pow(0, 2);
+  let lbs;
+  let inch;
+  let metricHeight = Math.pow(Number(state.cm) / 100, 2);
+  inch = Number(state.ft) * 12;
+  inch = inch + Number(state.in);
+  let imperialHeight = Math.pow(inch, 2);
+  console.log(inch);
   if (state.radioButton === "Metric") {
-    bmi = state.kg / metricHeight;
+    bmi = Number(state.kg) / metricHeight;
     bmi = bmi.toFixed(2);
   } else if (state.radioButton === "Imperial") {
-    //pontatlanok a számítások ezért át alakítás szükséges
-    //Imperial to Metric
-    let kg = state.st * 6.35;
-    kg = kg + state.lbs * 0.453;
-    let m = state.ft * 0.3048;
-    m = m + state.in * 0.0254;
-    console.log(m);
-    //calculation in Metric
-    metricHeight = 0;
-    metricHeight = Math.pow(m, 2);
-    bmi = kg / metricHeight;
+    lbs = Number(state.st) * 14;
+    lbs = lbs + Number(state.lbs);
+
+    /* inch = Number(state.ft) * 12;
+    inch = inch + Number(state.in); */
+    bmi = (lbs / imperialHeight) * 703;
     bmi = bmi.toFixed(2);
   } else {
   }
@@ -90,9 +84,12 @@ function Card() {
     maximumIdealWeight = (24.9 * metricHeight).toFixed(1);
     idealWeightValue = `${minimumIdealWeight}kg - ${maximumIdealWeight}kg`;
   } else if (state.radioButton === "Imperial") {
-    //ide kerül majd az imperial számítások
+    minimumIdealWeight = (18.5 * (imperialHeight * 2.54)).toFixed(1); //kg
+    maximumIdealWeight = (24.9 * (imperialHeight * 2.54)).toFixed(1); //kg
+    //ez még nem pontos
+    idealWeightValue = `${minimumIdealWeight}lbs - ${maximumIdealWeight}lbs`;
   }
-  function handelChange(e) {
+  function handleChange(e) {
     const { name, value } = e.target;
     setState((prev) => {
       return {
@@ -115,7 +112,7 @@ function Card() {
           title="Metric"
           btnName="radioButton"
           btnValue="Metric"
-          handelChange={handelChange}
+          handelChange={handleChange}
           btnChecked={state.radioButton === "Metric"}
         />
         <RadioButton
@@ -123,7 +120,7 @@ function Card() {
           btnName="radioButton"
           btnValue="Imperial"
           customStyle="ml-[1rem]"
-          handelChange={handelChange}
+          handelChange={handleChange}
           btnChecked={state.radioButton === "Imperial"}
         />
       </div>
@@ -131,10 +128,16 @@ function Card() {
         <Metric
           kgValue={state.kg}
           cmValue={state.cm}
-          handleChange={handelChange}
+          handleChange={handleChange}
         />
       ) : (
-        <Imperial />
+        <Imperial
+          ftValue={state.ft}
+          inchValue={state.in}
+          stValue={state.st}
+          lbValue={state.lbs}
+          handleChange={handleChange}
+        />
       )}
       {active ? (
         <ResultCard
