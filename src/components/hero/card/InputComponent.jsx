@@ -5,7 +5,7 @@ function InputComponent({ name, value, handleChange, unit, title }) {
       <div className=" relative flex flex-col">
         <input
           type="text"
-          className=" rounded-xl border-2 border-solid border-Borders px-[1.5rem] py-[1.25rem] text-[1.5rem] font-semibold text-Gunmetal outline-Blue"
+          className=" rounded-xl border-2 border-solid border-Borders px-[1.5rem] py-[1.25rem] text-[1.5rem] font-semibold text-Gunmetal outline-none focus:border-2 focus:border-solid focus:border-Blue"
           name={name}
           value={value}
           onChange={handleChange}
