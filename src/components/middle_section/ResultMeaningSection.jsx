@@ -8,8 +8,8 @@ function ResultMeaningSection() {
         <img
           src={ManEating}
           alt="image-man-eating"
-          className="mt-[4.5rem] md:ml-[-4rem]
-           md:mr-[4.69rem] md:mt-[6rem] md:h-[25.69313rem] md:w-[22.55981rem] xl:mt-[15.1rem] xl:h-[33.3125rem] xl:w-[35.25rem] "
+          className="mt-[4.5rem] object-cover
+           md:ml-[-4rem] md:mr-[4.69rem] md:mt-[6rem] md:h-[25.69313rem] md:w-[22.55981rem] xl:mt-[15.1rem] xl:h-[33.3125rem] xl:w-[35.25rem]"
         />
         <div className=" items-center xl:mt-[10.19rem] xl:flex xl:flex-col ">
           <div className="hidden xl:flex xl:w-[100%] xl:justify-end">
