@@ -1,6 +1,5 @@
-- "ResultMeaningSection"-t méretei nem tökéletesek
-- bmi kijelző ideális súly kijelzése pontatlan és a mértékegység kijelzése nem egyezik az eredeti dizájn-nal
-- nem teljes az imperial kalkulációja
+- "ResultMeaningSection"-t méretei nem tökéletesek (elmegy)
+- bmi kijelző ideális súly kijelzése pontatlan lbs esetében
 - useContext-et kéne majd használom props helyet 1 helyen
 - radió gomb kinézete nem egyezik a dizájn-nal
   //megjegzés//

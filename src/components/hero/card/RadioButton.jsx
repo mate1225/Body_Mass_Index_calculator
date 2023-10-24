@@ -11,7 +11,7 @@ function RadioButton({
       <div className={`flex items-center ${customStyle}`}>
         <input
           type="radio"
-          className=" h-[31px] w-[31px] border-2 border-solid border-red-500 outline-none hover:border-Blue"
+          className="h-[31px] w-[31px] checked:bg-red-500"
           name={btnName}
           value={btnValue}
           onChange={() =>
