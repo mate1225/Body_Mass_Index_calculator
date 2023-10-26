@@ -4,6 +4,7 @@ import Imperial from "./Imperial";
 import RadioButton from "./RadioButton";
 import ResultCard from "./ResultCard";
 import Welcome from "./Welcome";
+import * as RadioGroup from "@radix-ui/react-radio-group";
 
 function Card() {
   const [state, setState] = useState({
@@ -46,19 +47,13 @@ function Card() {
   let lbs;
   let inch;
   let metricHeight = Math.pow(Number(state.cm) / 100, 2);
-  inch = Number(state.ft) * 12;
-  inch = inch + Number(state.in);
-  let imperialHeight = Math.pow(inch, 2);
-  console.log(inch);
+  let imperialHeight = Math.pow(Number(state.ft) * 12 + Number(state.in), 2);
   if (state.radioButton === "Metric") {
     bmi = Number(state.kg) / metricHeight;
     bmi = bmi.toFixed(2);
   } else if (state.radioButton === "Imperial") {
     lbs = Number(state.st) * 14;
     lbs = lbs + Number(state.lbs);
-
-    /* inch = Number(state.ft) * 12;
-    inch = inch + Number(state.in); */
     bmi = (lbs / imperialHeight) * 703;
     bmi = bmi.toFixed(2);
   } else {
@@ -84,9 +79,8 @@ function Card() {
     maximumIdealWeight = (24.9 * metricHeight).toFixed(1);
     idealWeightValue = `${minimumIdealWeight}kg - ${maximumIdealWeight}kg`;
   } else if (state.radioButton === "Imperial") {
-    minimumIdealWeight = (18.5 * (imperialHeight * 2.54)).toFixed(1); //kg
-    maximumIdealWeight = (24.9 * (imperialHeight * 2.54)).toFixed(1); //kg
-    //ez még nem pontos
+    minimumIdealWeight = ((18.5 * imperialHeight) / 703).toFixed(1);
+    maximumIdealWeight = ((24.9 * imperialHeight) / 703).toFixed(1);
     idealWeightValue = `${minimumIdealWeight}lbs - ${maximumIdealWeight}lbs`;
   }
   function handleChange(e) {
@@ -95,6 +89,19 @@ function Card() {
       return {
         ...prev,
         [name]: value,
+      };
+    });
+  }
+  function handleRadioButtonChange(value) {
+    setState(() => {
+      return {
+        kg: "",
+        cm: "",
+        st: "",
+        lbs: "",
+        ft: "",
+        in: "",
+        radioButton: value,
       };
     });
   }
@@ -107,23 +114,10 @@ function Card() {
         Enter your details below
       </h2>
 
-      <div className=" mt-6 grid grid-cols-2 grid-rows-1">
-        <RadioButton
-          title="Metric"
-          btnName="radioButton"
-          btnValue="Metric"
-          handelChange={handleChange}
-          btnChecked={state.radioButton === "Metric"}
-        />
-        <RadioButton
-          title="Imperial"
-          btnName="radioButton"
-          btnValue="Imperial"
-          customStyle="ml-[1rem]"
-          handelChange={handleChange}
-          btnChecked={state.radioButton === "Imperial"}
-        />
-      </div>
+      <RadioButton
+        btnValue={state.radioButton}
+        handelChange={handleRadioButtonChange}
+      />
       {state.radioButton === "Metric" ? (
         <Metric
           kgValue={state.kg}
