@@ -1,6 +1,6 @@
 import * as RadioGroup from "@radix-ui/react-radio-group";
 
-function RadioButton({ btnValue, handelChange }) {
+function RadioButton({ btnValue, handelChange, label1, label2 }) {
   return (
     <>
       <RadioGroup.Root
@@ -25,7 +25,7 @@ function RadioButton({ btnValue, handelChange }) {
             className="cursor-pointer pl-[1.12rem] text-[1rem] text-Gunmetal"
             htmlFor="r1"
           >
-            Metric
+            {label1}
           </label>
         </div>
         <div className="flex items-center">
@@ -44,7 +44,7 @@ function RadioButton({ btnValue, handelChange }) {
             className="cursor-pointer pl-[1.12rem] text-[1rem] text-Gunmetal"
             htmlFor="r2"
           >
-            Imperial
+            {label2}
           </label>
         </div>
       </RadioGroup.Root>

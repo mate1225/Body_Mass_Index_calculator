@@ -16,17 +16,35 @@ function Card() {
     ft: "",
     in: "",
   });
+  const [error, setError] = useState({
+    kg: false,
+    cm: false,
+    st: false,
+    lbs: false,
+    ft: false,
+    in: false,
+  });
 
   //display state status
   let active = false;
-  if (state.radioButton === "Metric" && state.cm !== "" && state.kg !== "") {
+  if (
+    state.radioButton === "Metric" &&
+    state.cm !== "" &&
+    state.kg !== "" &&
+    error.cm === false &&
+    error.kg === false
+  ) {
     active = true;
   } else if (
     state.radioButton === "Imperial" &&
     state.st !== "" &&
     state.lbs !== "" &&
     state.ft !== "" &&
-    state.in !== ""
+    state.in !== "" &&
+    error.st === false &&
+    error.lbs === false &&
+    error.ft === false &&
+    error.in === false
   ) {
     active = true;
   } else {
@@ -46,7 +64,6 @@ function Card() {
     lbs = lbs + Number(state.lbs);
     bmi = (lbs / imperialHeight) * 703;
     bmi = bmi.toFixed(2);
-  } else {
   }
 
   //current Health Status
@@ -76,25 +93,67 @@ function Card() {
   //inputState change handler
   function handleInputChange(e) {
     const { name, value } = e.target;
+    // Check if the input contains only letters
+    const containsOnlyLetters = /^[a-zA-Z]+$/.test(value);
+
+    // Check if the input contains only numbers
+    const containsOnlyNumbers = /^[0-9]+$/.test(value);
+
     setState((prev) => {
       return {
         ...prev,
         [name]: value,
       };
     });
+
+    if (
+      containsOnlyLetters ||
+      value.length > 6 ||
+      Number(value) === 0 ||
+      (!containsOnlyLetters && !containsOnlyNumbers)
+    ) {
+      setError((prev) => {
+        return {
+          ...prev,
+          [name]: true,
+        };
+      });
+
+      setState((prev) => {
+        return {
+          ...prev,
+          [name]: "",
+        };
+      });
+    } else if (containsOnlyNumbers) {
+      setError((prev) => {
+        return {
+          ...prev,
+          [name]: false,
+        };
+      });
+    }
   }
   //radio Button State change handler
   function handleRadioButtonChange(value) {
     setState(() => {
       return {
+        radioButton: value,
         kg: "",
         cm: "",
         st: "",
         lbs: "",
         ft: "",
         in: "",
-        radioButton: value,
       };
+    });
+    setError({
+      kg: false,
+      cm: false,
+      st: false,
+      lbs: false,
+      ft: false,
+      in: false,
     });
   }
 
@@ -109,12 +168,16 @@ function Card() {
       <RadioButton
         btnValue={state.radioButton}
         handelChange={handleRadioButtonChange}
+        label1="Metric"
+        label2="Imperial"
       />
       {state.radioButton === "Metric" ? (
         <Metric
           kgValue={state.kg}
           cmValue={state.cm}
           handleChange={handleInputChange}
+          kgError={error.kg}
+          cmError={error.cm}
         />
       ) : (
         <Imperial
@@ -123,6 +186,10 @@ function Card() {
           stValue={state.st}
           lbValue={state.lbs}
           handleChange={handleInputChange}
+          ftError={error.ft}
+          inchError={error.in}
+          stError={error.st}
+          lbError={error.lbs}
         />
       )}
       {active ? (

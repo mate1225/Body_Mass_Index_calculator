@@ -1,5 +1,5 @@
 import InputComponent from "./InputComponent";
-function Metric({ kgValue, cmValue, handleChange }) {
+function Metric({ kgValue, cmValue, handleChange, kgError, cmError }) {
   return (
     <>
       <div className="mt-6 grid grid-cols-1 grid-rows-2  gap-3 md:grid-cols-2 md:grid-rows-1">
@@ -9,6 +9,7 @@ function Metric({ kgValue, cmValue, handleChange }) {
           name="kg"
           value={kgValue}
           handleChange={handleChange}
+          errorState={kgError}
         />
         <InputComponent
           title="Height"
@@ -16,6 +17,7 @@ function Metric({ kgValue, cmValue, handleChange }) {
           name="cm"
           value={cmValue}
           handleChange={handleChange}
+          errorState={cmError}
         />
       </div>
     </>
