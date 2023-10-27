@@ -1,12 +1,12 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
+//jsx
 import Metric from "./Metric";
 import Imperial from "./Imperial";
 import RadioButton from "./RadioButton";
 import ResultCard from "./ResultCard";
 import Welcome from "./Welcome";
-import * as RadioGroup from "@radix-ui/react-radio-group";
-
 function Card() {
+  //inputState
   const [state, setState] = useState({
     radioButton: "Metric",
     kg: "",
@@ -16,36 +16,26 @@ function Card() {
     ft: "",
     in: "",
   });
-  const inputObject = useContext(" bg-red-500");
-  //display state
+
+  //display state status
   let active = false;
-  if (state.radioButton === "Metric" && state.cm > 0 && state.kg > 0) {
+  if (state.radioButton === "Metric" && state.cm !== "" && state.kg !== "") {
     active = true;
   } else if (
     state.radioButton === "Imperial" &&
-    state.st &&
-    state.lbs &&
-    state.ft &&
-    state.in
+    state.st !== "" &&
+    state.lbs !== "" &&
+    state.ft !== "" &&
+    state.in !== ""
   ) {
     active = true;
   } else {
     active = false;
   }
-  function handelChange(e) {
-    const { name, value } = e.target;
 
-    setState((prev) => {
-      return {
-        ...prev,
-        [name]: value,
-      };
-    });
-  }
   //calculations
   let bmi = 0;
   let lbs;
-  let inch;
   let metricHeight = Math.pow(Number(state.cm) / 100, 2);
   let imperialHeight = Math.pow(Number(state.ft) * 12 + Number(state.in), 2);
   if (state.radioButton === "Metric") {
@@ -83,7 +73,8 @@ function Card() {
     maximumIdealWeight = ((24.9 * imperialHeight) / 703).toFixed(1);
     idealWeightValue = `${minimumIdealWeight}lbs - ${maximumIdealWeight}lbs`;
   }
-  function handleChange(e) {
+  //inputState change handler
+  function handleInputChange(e) {
     const { name, value } = e.target;
     setState((prev) => {
       return {
@@ -92,6 +83,7 @@ function Card() {
       };
     });
   }
+  //radio Button State change handler
   function handleRadioButtonChange(value) {
     setState(() => {
       return {
@@ -105,6 +97,7 @@ function Card() {
       };
     });
   }
+
   return (
     <section
       className="z-2 relative ml-6 mr-6 mt-[-180px] rounded-2xl
@@ -113,7 +106,6 @@ function Card() {
       <h2 className="text-[1.5rem] font-semibold tracking-[-0.075rem] text-Gunmetal ">
         Enter your details below
       </h2>
-
       <RadioButton
         btnValue={state.radioButton}
         handelChange={handleRadioButtonChange}
@@ -122,7 +114,7 @@ function Card() {
         <Metric
           kgValue={state.kg}
           cmValue={state.cm}
-          handleChange={handleChange}
+          handleChange={handleInputChange}
         />
       ) : (
         <Imperial
@@ -130,7 +122,7 @@ function Card() {
           inchValue={state.in}
           stValue={state.st}
           lbValue={state.lbs}
-          handleChange={handleChange}
+          handleChange={handleInputChange}
         />
       )}
       {active ? (
