@@ -32,8 +32,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [](https://mate1225.github.io/Body_Mass_Index_calculator/)
+- Solution URL: [click here](https://your-solution-url.com)
+- Live Site URL: [click here](https://mate1225.github.io/Body_Mass_Index_calculator/)
 
 ## My process
 
@@ -62,4 +62,3 @@ In the future i want to Learn and practice other React hooks (useReducer,useCont
 
 - Website - [Mészáros Máté](https://mate1225.github.io/Projects/)
 - Frontend Mentor - [@mate1225](https://www.frontendmentor.io/profile/mate1225)
-- Github - [@mate1225](https://github.com/mate1225)
