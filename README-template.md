@@ -32,7 +32,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [click here](https://your-solution-url.com)
+- Solution URL: [click here](https://www.frontendmentor.io/solutions/responsive-bmi-clalulator-page-react-tailwind-cssradix-uivite-UUIqNv8Agw)
 - Live Site URL: [click here](https://mate1225.github.io/Body_Mass_Index_calculator/)
 
 ## My process
